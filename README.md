@@ -31,32 +31,44 @@ Follow these steps to set up the project locally:
    cd django-crm
    ```
 
-2. **Set up the virtual environment and install dependencies:**
-   This project uses `uv` for package management. You can install all dependencies by running:
+2. **Create and activate a virtual environment:**
+   ```bash
+   # Create a virtual environment using uv
+   uv venv
+   
+   # Or using standard Python:
+   # python -m venv .venv
+   
+   # Activate it on Windows:
+   .venv\Scripts\activate
+   
+   # Or on macOS/Linux:
+   source .venv/bin/activate
+   ```
+
+3. **Install dependencies:**
+   This project uses `uv` for package management. You can install all dependencies quickly by running:
    ```bash
    uv sync
    ```
    Alternatively, using standard `pip`:
    ```bash
-   python -m venv .venv
-   .venv\Scripts\activate  # On Windows
-   # source .venv/bin/activate  # On macOS/Linux
    pip install .
    ```
 
-3. **Configure the Database:**
+4. **Configure the Database:**
    - Ensure you have a MySQL server running locally.
    - Create a new MySQL database for the project.
    - Update the `DATABASES` settings in `dcrm/dcrm/settings.py` with your MySQL credentials (Database Name, User, Password, Host, Port).
 
-4. **Apply database migrations:**
+5. **Apply database migrations:**
    ```bash
    cd dcrm
    python manage.py makemigrations
    python manage.py migrate
    ```
 
-5. **Run the development server:**
+6. **Run the development server:**
    ```bash
    python manage.py runserver
    ```
